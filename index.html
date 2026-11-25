@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f4ef">
+  <title>EcoTrack | pequenas ações, impacto real</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div class="brand">
+        <span class="mark" aria-hidden="true">✳</span>
+        <span>eco<span class="light">track</span></span>
+      </div>
+      <span class="local"><span aria-hidden="true">●</span> Seus registros ficam neste navegador</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">CADERNO DE IMPACTO</p>
+      <h1>Pequenas ações.<br><em>Impacto real.</em></h1>
+      <p class="sub">Registre escolhas sustentáveis do dia a dia e acompanhe o caminho que você está construindo.</p>
+    </section>
+
+    <section class="stats" aria-label="Resumo das ações">
+      <article><span>Ações registradas</span><strong id="total">0</strong></article>
+      <article><span>Categoria mais ativa</span><strong id="top-category" class="small-value">—</strong></article>
+      <article><span>Últimos 7 dias</span><strong id="recent">0</strong></article>
+    </section>
+
+    <section class="board">
+      <div class="board-head">
+        <div>
+          <p class="eyebrow">SEU HISTÓRICO</p>
+          <h2>Ações sustentáveis</h2>
+        </div>
+        <button id="new-action" class="primary" type="button">＋ Registrar ação</button>
+      </div>
+
+      <form id="action-form" class="form" hidden>
+        <label for="description">
+          O que você fez?
+          <input id="description" name="description" maxlength="100" required placeholder="Ex.: Separei papel para reciclagem">
+        </label>
+        <label for="category">
+          Categoria
+          <select id="category" name="category">
+            <option value="reciclagem">Reciclagem</option>
+            <option value="descarte">Descarte correto</option>
+            <option value="agua">Economia de água</option>
+            <option value="energia">Economia de energia</option>
+            <option value="mobilidade">Mobilidade sustentável</option>
+            <option value="consumo">Consumo consciente</option>
+          </select>
+        </label>
+        <label for="date">
+          Data
+          <input id="date" name="date" type="date" required>
+        </label>
+        <button class="primary" type="submit">Salvar registro</button>
+        <button id="cancel" class="ghost" type="button">Cancelar</button>
+      </form>
+
+      <div class="filters" id="filters" role="group" aria-label="Filtrar ações por categoria">
+        <button class="filter selected" type="button" data-filter="todas">Todas</button>
+        <button class="filter" type="button" data-filter="reciclagem">Reciclagem</button>
+        <button class="filter" type="button" data-filter="descarte">Descarte</button>
+        <button class="filter" type="button" data-filter="agua">Água</button>
+        <button class="filter" type="button" data-filter="energia">Energia</button>
+        <button class="filter" type="button" data-filter="mobilidade">Mobilidade</button>
+        <button class="filter" type="button" data-filter="consumo">Consumo</button>
+        <span id="count-label" aria-live="polite"></span>
+      </div>
+
+      <div id="action-list" class="task-list"></div>
+      <div id="empty" class="empty" hidden>
+        <span aria-hidden="true">✳</span>
+        <h3>Nenhuma ação registrada</h3>
+        <p>Registre uma atitude sustentável para iniciar seu histórico.</p>
+      </div>
+    </section>
+
+    <footer>EcoTrack · Cada escolha conta.</footer>
+  </main>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
