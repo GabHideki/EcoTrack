@@ -64,5 +64,5 @@ test('filtra ações pela categoria', () => {
     { category: 'agua' },
   ];
 
-  assert.equal(filterActions(acoes, 'agua').length, 99);
+  assert.equal(filterActions(acoes, 'agua').length, 2);
 });
