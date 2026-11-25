@@ -1,0 +1,24 @@
+name: CI EcoTrack
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  testar-e-construir:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v7
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Executar testes
+        run: npm test
+
+      - name: Preparar arquivos para publicação
+        run: npm run build
